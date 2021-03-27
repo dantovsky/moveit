@@ -1,40 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NLW #04 2021 | Next Level Week » Move-it App
 
-## Getting Started
+App em produção:  
+https://moveit-dantii.vercel.app
 
-First, run the development server:
+Esta aplicação foi desenvolvida no âmbito do evento da Rocketseat, com o foco em Dev Frontend com NextJS. A app foi inicializada com o comando `create-next-app`.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+!['Move.it App'](public/img/screenshot.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Um programador pode usá-la para fazer autodesafio de realizar um exercício ocular ou atividade física a cada 25 minutos, onde a cada desafio concluído ganha pontos (XP) e cuida da sua saúde enquanto trabalha.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+!['Move.it App - Desafio ocular'](public/img/desafio-ocular.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Os desafios são escolhidos aleatoriamente a partir de um ficheiro JSON.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+!['Move.it App - Desafio de atividade física'](public/img/desafio-fisico.png)
 
-## Learn More
+Quando atinge uma determinada pontuação, o user aumenta o level, onde é informado através de um modal.
 
-To learn more about Next.js, take a look at the following resources:
+!['Move.it App - Subida de level (Level up)'](public/img/levelup.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Como rodar a app numa máquina local
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Download da app
+- Instalar as dependências com `npm install`
+- Rodar o servidor de desenvolvimento:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```
+- Aceder a app em [http://localhost:3000](http://localhost:3000) através do browser para ver o resultado.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
-
-## Anotações
+## Anotações durante o evento
 
 Figma com mais ideias para incrementar no projeto
 https://www.figma.com/file/2cp7thFOmNRqoeYJ3u11C0/Move.it-2.0
@@ -49,7 +46,7 @@ Contextos: formas de fazer comunicação entre vários componentes da app. Ou se
 
 Na app movit-next, o Context API foi utilizado para que o componente Countdown pudesse se comunicar com o componente ChallengeBox.
 
-**Estrutura básica de um contexto:**
+**Estrutura básica de um Contect API:**
 
 // --- CountdownContext.tsx
 
@@ -440,8 +437,3 @@ https://moveit-dantii.vercel.app
 - Logar com Github (OAuth) :: O Next faz isso sem a necessidade de ter que usar um backend. Ver este vídeo:  
   Serverless com ReactJS e Next.js na Vercel | Code/Drops #54  
   https://www.youtube.com/watch?v=Cz55Jmhfw84
-
-
-## Andamento
-
-Parei em 12:05 do vídeo de 25 fev - NLW 4 Trilha ReactJS...
