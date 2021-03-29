@@ -3,7 +3,7 @@
 App em produção:  
 https://moveit-dantii.vercel.app
 
-Esta aplicação foi desenvolvida no âmbito do evento da Rocketseat, com o foco em Dev Frontend com NextJS. A app foi inicializada com o comando `create-next-app`.
+Esta aplicação foi desenvolvida no âmbito do evento da Rocketseat, com o foco em Dev Frontend com NextJS.
 
 !['Move.it App'](public/img/screenshot.png)
 
@@ -31,14 +31,78 @@ Quando atinge uma determinada pontuação, o user aumenta o level, onde é infor
     ```
 - Aceder a app em [http://localhost:3000](http://localhost:3000) através do browser para ver o resultado.
 
+## Como utilizar a app
+
+Quando um programador inicia uma jornada de trabalho, poderá fazer uso da app para que a cada 25 minutos lhe seja sorteado um desafio para realizar. Para isso, deverá iniciar um ciclo no botão `Iniciar um ciclo`. Ao finaliar esse tempo, deverá realizar o desafio e caso o tenha feito deverá confirmar no botao `Completei`, e então repetir este ciclo.
+
+**Dica para testar a app:**  
+Altere o tempo do ciclo para um tempo menor, por exemplo 6 segundos, para que possa chegar rapidamente a um desafio ou a uma subida de nível. Para isso, altera o finheiro `contexts/Countdown.tsx`, configurando o valor da constante `cicle`, na linha 25:
+
+Valor padrão:
+```tsx
+const cicle = 25 * 60
+```
+
+Altere para:
+```tsx
+const cicle = 0.1 * 60
+```
+
+---
+
 ## Anotações durante o evento
 
-Figma com mais ideias para incrementar no projeto
-https://www.figma.com/file/2cp7thFOmNRqoeYJ3u11C0/Move.it-2.0
+Anotações dos principais pontos e conceitos da trilha React.
 
-Acelere sua carreira
-Currículo alinhado com o mercado e as atitudes que vão te ajudar a acelerar na direção dos seus objetivos como dev.
-https://pages.rocketseat.com.br/ignite/pre-matriculas/15
+## Setup inicial do projeto Next com TypeScript
+
+A app foi criada com os comandos:
+
+- `npx create-next-app moveit-next`
+- `npm install typescript @types/react @types/react-dom @types/node -D`
+- Alterar as extensões `.js` para `.tsx`.
+- Criação da pasta `src` na raiz do projeto e deixar a estrutura inicial desta forma:
+```
+-- src
+    -- components
+    -- pages
+        -- _app.tsx
+        -- _document.tsx
+        -- index.tsx
+    -- styles
+```
+
+## Manipular o Document
+
+Podemos mexer na estrutura do documento HTML de um projeto Next, através da criação de um arquivo `pages/_document.tsx`.
+
+O _document.tsx carrega uma única vez na visita do user, sendo útil então para colocar no `head` tudo o que for estático e precisa ser reaproveitado na app. 
+
+```tsx
+import Document, { Html, Head, Main, NextScript } from 'next/document'
+
+// O _document.txs carrega apenas uma única vez numa visita de um user
+
+export default class MyDocument extends Document {
+    render() {
+        return (
+            <Html>
+                <Head>
+                    <link rel="shortcut icon" href="favicon.png" type="image/png" />
+
+                    {/* Google Fonts */}
+                    <link rel="preconnect" href="https://fonts.gstatic.com" />
+                    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
+                </Head>
+                <body>
+                    <Main /> {/* Lugar onde fica a app */}
+                    <NextScript />
+                </body>
+            </Html>
+        )
+    }
+}
+```
 
 ### Context API - API de Contextos do React
 
@@ -437,3 +501,9 @@ https://moveit-dantii.vercel.app
 - Logar com Github (OAuth) :: O Next faz isso sem a necessidade de ter que usar um backend. Ver este vídeo:  
   Serverless com ReactJS e Next.js na Vercel | Code/Drops #54  
   https://www.youtube.com/watch?v=Cz55Jmhfw84
+
+Figma com mais ideias para incrementar no projeto  
+https://www.figma.com/file/2cp7thFOmNRqoeYJ3u11C0/Move.it-2.0
+
+Inscrição para o Ignite: "_Currículo alinhado com o mercado e as atitudes que vão te ajudar a acelerar na direção dos seus objetivos como dev._"  
+https://pages.rocketseat.com.br/ignite/pre-matriculas/15
