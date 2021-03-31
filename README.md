@@ -54,6 +54,21 @@ const cicle = 0.1 * 60
 
 Anotações dos principais pontos e conceitos da trilha React.
 
+### Desvendando o Next.js
+
+- SPA - Single Page Application
+- SSR - Server Side Rendering
+- SSG - Static Site Generation
+
+SPA  
+O browser precisa de ter o JavaScript abilitado para funcionar. Melo indicado para apps com acesso fechado.
+
+SSR  
+Modelo indicado para sites e blogs públicos, pois possibilita a otimização SEO, sendo o conteúdo do site lido pelos crowlers.
+
+SSG  
+Modelo útil para aplicar a página que não precisam de ser atualizadas constantemente. Neste caso é indicado para que seja criado um cache com a página, impedindo que seja sempre buscado o mesmo conteúdo ao backend. Indicado para sites com grande volume de acesso e baixa necessidade de alteração constante do conteúdo.
+
 ## Setup inicial do projeto Next com TypeScript
 
 A app foi criada com os comandos:
@@ -103,6 +118,11 @@ export default class MyDocument extends Document {
     }
 }
 ```
+
+Formas de adicionar tags <link ... /> ao Next.
+- Através do <Head> dentro de cada página.
+- Através do <Head> dentro de do _app.js para compartilhar com as outras páginas.
+- Através do _document.tsx (funcionalidade do Next), podendo mexer na estrutura do documento HTML.
 
 ### Context API - API de Contextos do React
 
